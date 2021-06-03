@@ -23,7 +23,6 @@ import { ProductService } from './product.service'
   providers: [
     ProductService
   ],
-  providers: [ProductService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
