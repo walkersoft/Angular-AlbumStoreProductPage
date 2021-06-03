@@ -1,4 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Output } from '@angular/core';
+import { ProductService } from 'app/product.service';
+import { Observable } from 'rxjs/Observable';
 
 @Component({
   selector: 'app-product-description',
@@ -7,9 +9,15 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ProductDescriptionComponent implements OnInit {
 
-  constructor() { }
+  @Output() albumInfo;
 
-  ngOnInit() {
+  constructor(private _productService: ProductService) { }
+
+  ngOnInit(): void {
+    this._productService.getAlbum(1).subscribe(response => {
+      console.log('this is the response');
+      console.log(response);
+      this.albumInfo = response;
+    });
   }
-
 }
