@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ProductService } from 'app/product.service';
+import { ProductService } from '../product.service';
 import { Album } from '../album';
 
 @Component({
@@ -10,10 +10,10 @@ import { Album } from '../album';
 export class ProductTracklistingComponent implements OnInit {
   albumInfo: Album;
 
-  constructor(private service: ProductService) { }
+  constructor(private _productService: ProductService) { }
 
   ngOnInit() {
-    this.service.getAlbum(1).subscribe(r => this.albumInfo = r);
+    this._productService.getAlbum(1).subscribe(r => this.albumInfo = r);
   }
 
 }
