@@ -1,0 +1,12 @@
+ul {
+  list-style-type: none;
+}
+
+li {
+  display: block;
+  list-style: 30px;
+}
+
+button {
+  line-height: 1;
+}
